@@ -14,5 +14,17 @@ public class ArrayBlankFiller {
 				list[i] = i + 1; // Redefine list indices
 			}
 		}
+
+		public void FindBlankIndex(List<int> list) { // Method for finding blank list indices
+			list.Sort(); // Sort the list specified in arguments in ascending order
+			for (int i = 1; i <= list.Count; i++) { // For each list index, from 1 until the last index, execute code below
+				if (!list.Contains(i)) { // If list index i is missing execute code below
+					return i; // Return list index i
+				}
+				else { // If no list indices are missing execute code below
+					return list[list.Count - 1] + 1; // Return next index in the list
+				}
+			}
+		}
 	}
 }
